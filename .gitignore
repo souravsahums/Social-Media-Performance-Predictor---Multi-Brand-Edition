@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.conda/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files with secrets
+.env
+.env.local
+*.env
+
+# Logs
+*.log
+logs/
+
+# Sensitive/generated data
+*.pkl
+*.pt
+
+# PDF problem statement (copyrighted assignment)
+*.pdf
+
+# Temporary files
+*.tmp
+*.bak
+~$*

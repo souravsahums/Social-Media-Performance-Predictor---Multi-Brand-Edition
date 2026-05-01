@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Performance Predictor</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📊 Social Media Performance Predictor</h1>
+            <p class="subtitle">Predict Instagram post engagement &amp; understand what drives performance</p>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="main-grid">
+
+            <!-- Left: Input Form -->
+            <section class="card form-card">
+                <h2>📝 Post Draft</h2>
+
+                <!-- Input mode toggle -->
+                <div class="input-mode-toggle">
+                    <button type="button" class="mode-btn active" id="mode-manual" onclick="setInputMode('manual')">
+                        ✏️ Manual Input
+                    </button>
+                    <button type="button" class="mode-btn" id="mode-url" onclick="setInputMode('url')">
+                        🔗 From URL
+                    </button>
+                </div>
+
+                <!-- URL Input Section -->
+                <div id="url-input-section" style="display:none">
+                    <div class="field">
+                        <label for="post_url">Instagram Post / Reel URL</label>
+                        <input type="url" id="post_url" name="post_url"
+                               placeholder="https://www.instagram.com/p/DUxE-r8AuL7/" />
+                        <span class="hint">Paste an Instagram post or reel URL from our dataset (378 posts from 5 brands)</span>
+                    </div>
+                    <button type="button" class="btn-predict" id="btn-predict-url" onclick="predictFromUrl()">
+                        🔮 Predict from URL
+                    </button>
+                </div>
+
+                <!-- Manual Input Form -->
+                <form id="predict-form">
+
+                    <!-- Brand -->
+                    <div class="field">
+                        <label for="brand">Brand</label>
+                        <select id="brand" name="brand">
+                            <option value="sprite_india">Sprite India</option>
+                            <option value="cocacola_india">Coca-Cola India</option>
+                            <option value="pepsiindia">Pepsi India</option>
+                            <option value="redbullindia">Red Bull India</option>
+                            <option value="thumsupofficial">Thums Up</option>
+                            <option value="other">Other / New Brand</option>
+                        </select>
+                    </div>
+
+                    <!-- Followers -->
+                    <div class="field">
+                        <label for="followers">Followers</label>
+                        <input type="number" id="followers" name="followers" value="170000" min="0" />
+                    </div>
+
+                    <!-- Caption -->
+                    <div class="field">
+                        <label for="caption">Caption</label>
+                        <textarea id="caption" name="caption" rows="5"
+                                  placeholder="Write your post caption here..."></textarea>
+                        <span class="hint" id="caption-stats">0 words · 0 hashtags · 0 mentions</span>
+                    </div>
+
+                    <!-- Media Type -->
+                    <div class="field">
+                        <label for="media_type">Content Type</label>
+                        <select id="media_type" name="media_type">
+                            <option value="reel">Reel (Video)</option>
+                            <option value="post">Static Post (Image)</option>
+                            <option value="album">Album / Carousel</option>
+                        </select>
+                    </div>
+
+                    <!-- Duration -->
+                    <div class="field" id="duration-group">
+                        <label for="duration">Video Duration (seconds)</label>
+                        <input type="number" id="duration" name="duration" value="30" min="0" max="600" />
+                    </div>
+
+                    <!-- Collaboration -->
+                    <div class="field checkbox-field">
+                        <input type="checkbox" id="is_collab" name="is_collab" />
+                        <label for="is_collab">Collaborated Post</label>
+                    </div>
+                    <div class="field" id="collab-group" style="display:none">
+                        <label for="collaborators">Collaborator usernames (comma-separated)</label>
+                        <input type="text" id="collaborators" name="collaborators"
+                               placeholder="creator1, creator2" />
+                    </div>
+
+                    <!-- Visual Summary -->
+                    <div class="field">
+                        <label for="visual_summary">Visual Description (optional)</label>
+                        <textarea id="visual_summary" name="visual_summary" rows="3"
+                                  placeholder="Describe what's in the image/video, e.g. 'A woman drinking Sprite in summer heat, brand logo visible'"></textarea>
+                        <span class="hint">Helps the model understand visual content.</span>
+                    </div>
+
+                    <button type="submit" class="btn-predict" id="btn-predict">
+                        🔮 Predict Performance
+                    </button>
+                </form>
+            </section>
+
+            <!-- Right: Results -->
+            <section class="card results-card" id="results-section" style="display:none">
+                <h2>📈 Prediction Results</h2>
+
+                <!-- Prediction badge -->
+                <div class="prediction-badge" id="prediction-badge">
+                    <span class="pred-label" id="pred-label">—</span>
+                    <span class="pred-conf" id="pred-conf">—</span>
+                </div>
+
+                <!-- Probability bars -->
+                <div class="prob-bars" id="prob-bars">
+                    <div class="prob-row">
+                        <span class="prob-name">🔴 Low</span>
+                        <div class="prob-bar-bg"><div class="prob-bar low" id="prob-low"></div></div>
+                        <span class="prob-val" id="prob-low-val">0%</span>
+                    </div>
+                    <div class="prob-row">
+                        <span class="prob-name">🟡 Medium</span>
+                        <div class="prob-bar-bg"><div class="prob-bar medium" id="prob-medium"></div></div>
+                        <span class="prob-val" id="prob-med-val">0%</span>
+                    </div>
+                    <div class="prob-row">
+                        <span class="prob-name">🟢 High</span>
+                        <div class="prob-bar-bg"><div class="prob-bar high" id="prob-high"></div></div>
+                        <span class="prob-val" id="prob-high-val">0%</span>
+                    </div>
+                </div>
+
+                <!-- Explanation -->
+                <h3>Why this prediction?</h3>
+                <div id="explanation-list" class="explanation-list"></div>
+
+                <!-- Brand context -->
+                <h3>Brand Context</h3>
+                <div id="brand-context" class="brand-context"></div>
+
+                <!-- SLM Reasoning -->
+                <div id="slm-section" style="display:none">
+                    <h3>🧠 AI Reasoning (Second Opinion)</h3>
+                    <div id="slm-prediction" class="slm-badge"></div>
+                    <div id="slm-reasoning" class="explanation-list"></div>
+                </div>
+
+                <!-- Drift Warning -->
+                <div id="drift-warning" style="display:none" class="drift-warning"></div>
+
+                <!-- Feedback -->
+                <div class="feedback-section">
+                    <h3>📝 Was this prediction correct?</h3>
+                    <div class="feedback-buttons">
+                        <button type="button" class="btn-feedback correct" id="btn-correct"
+                                onclick="submitFeedback(true)">✅ Correct</button>
+                        <button type="button" class="btn-feedback wrong" id="btn-wrong"
+                                onclick="showCorrectionForm()">❌ Wrong</button>
+                    </div>
+                    <div id="correction-form" style="display:none">
+                        <label for="correct-label">What should it be?</label>
+                        <select id="correct-label">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                        <button type="button" class="btn-feedback submit"
+                                onclick="submitFeedback(false)">Submit Correction</button>
+                    </div>
+                    <p id="feedback-msg" class="feedback-msg" style="display:none"></p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Social Media Performance Predictor &middot; Multi-Brand Engagement Analysis</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+name: smpp-predictor
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - torch
+    - torchvision
+    - numpy
+    - pandas
+    - scikit-learn
+    - fastapi
+    - uvicorn
+    - python-multipart
+    - sentence-transformers
+    - Pillow
+    - pydantic
+    - requests
+    - aiofiles
+    - shap
+    - pytest

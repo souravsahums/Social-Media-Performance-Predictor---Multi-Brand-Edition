@@ -1,0 +1,210 @@
+{
+  "timestamp": "2026-05-01 16:04:19",
+  "server": "http://localhost:8000",
+  "total_test_cases": 20,
+  "ensemble_matches": 6,
+  "slm_matches": 7,
+  "avg_latency_ms": 170.7,
+  "results": [
+    {
+      "id": 1,
+      "name": "High-Performance Reel + Celebrity Collab",
+      "expected": "high",
+      "ensemble": "high",
+      "nn": "medium",
+      "slm": "high",
+      "confidence": 0.5447,
+      "latency_ms": 96.1
+    },
+    {
+      "id": 2,
+      "name": "Low-Performance Static Post (Minimal Effort)",
+      "expected": "low",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "low",
+      "confidence": 0.4105,
+      "latency_ms": 93.0
+    },
+    {
+      "id": 3,
+      "name": "Average Branded Reel \u2014 Medium",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.5415,
+      "latency_ms": 130.3
+    },
+    {
+      "id": 4,
+      "name": "Album with Educational Caption",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.4638,
+      "latency_ms": 175.9
+    },
+    {
+      "id": 5,
+      "name": "Empty Caption Edge Case",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.459,
+      "latency_ms": 189.9
+    },
+    {
+      "id": 6,
+      "name": "Extremely Long Video (180s)",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.5901,
+      "latency_ms": 143.4
+    },
+    {
+      "id": 7,
+      "name": "Weekend UGC + Multiple Collabs",
+      "expected": "high",
+      "ensemble": "high",
+      "nn": "medium",
+      "slm": "high",
+      "confidence": 0.5507,
+      "latency_ms": 111.5
+    },
+    {
+      "id": 8,
+      "name": "Unknown Brand (Not in Training)",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.5152,
+      "latency_ms": 176.0
+    },
+    {
+      "id": 9,
+      "name": "Zero Followers (New Account)",
+      "expected": "low",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "medium",
+      "confidence": 0.5121,
+      "latency_ms": 147.6
+    },
+    {
+      "id": 10,
+      "name": "Red Bull Extreme Sports",
+      "expected": "high",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.5634,
+      "latency_ms": 91.0
+    },
+    {
+      "id": 11,
+      "name": "Pepsi Celebrity Campaign",
+      "expected": "high",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.588,
+      "latency_ms": 227.4
+    },
+    {
+      "id": 12,
+      "name": "Lazy Content (Bare Minimum)",
+      "expected": "low",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "medium",
+      "confidence": 0.508,
+      "latency_ms": 472.9
+    },
+    {
+      "id": 13,
+      "name": "Morning Motivational Poll",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.4928,
+      "latency_ms": 197.0
+    },
+    {
+      "id": 14,
+      "name": "Diwali Festival Campaign",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.4957,
+      "latency_ms": 205.1
+    },
+    {
+      "id": 15,
+      "name": "Spam Hashtags (Over-optimization)",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.5527,
+      "latency_ms": 312.1
+    },
+    {
+      "id": 16,
+      "name": "Gen Z Meme / Humor Content",
+      "expected": "high",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.5282,
+      "latency_ms": 111.9
+    },
+    {
+      "id": 17,
+      "name": "Very Short Duration (5s)",
+      "expected": "low",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "medium",
+      "confidence": 0.4251,
+      "latency_ms": 159.1
+    },
+    {
+      "id": 18,
+      "name": "4-Creator Mega Collaboration",
+      "expected": "high",
+      "ensemble": "high",
+      "nn": "medium",
+      "slm": "high",
+      "confidence": 0.5218,
+      "latency_ms": 161.1
+    },
+    {
+      "id": 19,
+      "name": "Nostalgic / Emotional Content",
+      "expected": "medium",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "high",
+      "confidence": 0.5286,
+      "latency_ms": 110.4
+    },
+    {
+      "id": 20,
+      "name": "All Zeros / Robustness Test",
+      "expected": "low",
+      "ensemble": "high",
+      "nn": "high",
+      "slm": "medium",
+      "confidence": 0.3919,
+      "latency_ms": 102.8
+    }
+  ]
+}

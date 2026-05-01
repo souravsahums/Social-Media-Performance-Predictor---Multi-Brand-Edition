@@ -1,0 +1,101 @@
+[
+  {
+    "timestamp": "2026-05-01T06:33:05.632405",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "6ca57cee6def4e3b",
+      "source": "web_user",
+      "predicted": "low",
+      "corrected": "high",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T07:32:29.809690",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "819c9fc9df850b3e",
+      "source": "web_user",
+      "predicted": "low",
+      "corrected": "medium",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T10:08:24.739709",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "43c2dd56ae441c73",
+      "source": "web_user",
+      "predicted": "low",
+      "corrected": "high",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T10:08:47.580314",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "30315056480afaed",
+      "source": "web_user",
+      "predicted": "low",
+      "corrected": "high",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T10:34:02.741233",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "6f856a054ba08454",
+      "source": "web_user",
+      "predicted": "low",
+      "corrected": "high",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T10:58:30.405409",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "e132a69f0ba339d6",
+      "source": "web_user",
+      "predicted": "high",
+      "corrected": "low",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T11:01:37.236161",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "5dc6a96291452503",
+      "source": "web_user",
+      "predicted": "low",
+      "corrected": "high",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T14:16:06.515960",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "dc8935db73132de3",
+      "source": "web_user",
+      "predicted": "high",
+      "corrected": "medium",
+      "quality": 1.0
+    }
+  },
+  {
+    "timestamp": "2026-05-01T14:28:39.056490",
+    "action": "accepted",
+    "details": {
+      "feedback_id": "2ee81bbcf73c48b2",
+      "source": "web_user",
+      "predicted": "high",
+      "corrected": "medium",
+      "quality": 1.0
+    }
+  }
+]
