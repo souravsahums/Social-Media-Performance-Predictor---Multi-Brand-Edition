@@ -3,6 +3,11 @@
 An ML system that predicts Instagram post engagement performance (**low / medium / high**) for Indian beverage brands using a **Random Forest** primary model with **SHAP interpretability** and visual feature extraction from thumbnails.
 
 ---
+## 🎬 Demo Walkthrough
+
+[![Loom Video](https://img.shields.io/badge/Watch%20Demo-Loom-623CE4?style=for-the-badge&logo=loom&logoColor=white)](https://www.loom.com/share/8c94e79af3b2415684c4afe0e8818150)
+
+---
 
 ## How to Run Locally
 
